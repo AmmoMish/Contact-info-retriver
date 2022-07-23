@@ -1,0 +1,23 @@
+#Fnction to find Phone no.
+def IsPhoneno(str):
+    for i in range(len(str)):
+        if str[i] == '+' and str[i+1] == '9' and str[i+2] == '1':
+            for j in range(14):
+                print(str[i], end="")
+                i += 1
+            print()
+
+#Fnction to find Email
+def IsEmail(str):
+    adrate = str.find("@gmail.com")
+    emailstart = adrate
+    while(str[emailstart] != ' '):
+         emailstart -= 1
+    count = (adrate - emailstart) + 9
+    print(str[emailstart+1 : adrate+10])
+
+#Driver_Code
+file = open("file.txt")
+str = file.read()
+IsPhoneno(str)
+IsEmail(str)
